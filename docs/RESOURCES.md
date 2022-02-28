@@ -2,6 +2,11 @@
 
 #### TODO
 
+## Utilities
+* qemu (qemu-kvm)
+* libvirt (libvirt-system-daemon)
+* virt-manager
+
 # Resources
 
 
