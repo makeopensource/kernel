@@ -1,4 +1,4 @@
-# MakeOpenSource Macro Kernel
+# MakeOpenSource Micro Kernel
 
 the main repository for the macro kernel project.
 
