@@ -65,6 +65,11 @@ all: ${TARGET}.iso
 	mmd -i $@ ::/EFI
 	mmd -i $@ ::/EFI/BOOT
 	mcopy -i $@ BOOTX64.EFI ::/EFI/BOOT
+	
+	#put the kernel into the image #########
+	mcopy -i $@ ../src/kernel.bin ::/
+	# this may be temporary ################
+	
 	rm -fr BOOTX64.EFI
 	rm -fr $<
 
@@ -81,6 +86,7 @@ debug.iso : ${TARGET}.efi.debug debug.img
 	mv ${TARGET}.efi.debug ${TARGET}.efi
 	mmd -i debug.img ::/EFI/TEST
 	mcopy -i debug.img ${TARGET}.efi ::/EFI/TEST
+	
 	mkdir -p iso
 	cp debug.img iso
 	xorriso -as mkisofs -R -f -e debug.img -no-emul-boot -o $@ iso
